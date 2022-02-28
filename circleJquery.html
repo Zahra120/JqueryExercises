@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            height: 20px;
+            width: 20px;
+           
+            border: 1px solid red;
+            border-radius: 50%;
+            display: inline-block;
+
+          
+        }
+        .square {
+            height: 20px;
+            width: 20px;
+            
+            border: 1px solid green;
+            display: inline-block;
+
+
+        }
+    </style>
+
+</head>
+<body onLoad="circle()">
+     <!-- <div class  = "circle">
+    </div>
+    <div class ="square"></div>  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+     
+        function circle(){
+            let r = Math.floor(Math.random()*256), 
+            g = Math.floor(Math.random()*256),
+            b = Math.floor(Math.random()*256);
+            // $('body').append($(".circle") );
+            // $(".circle").clone(true).appendTo("body");
+           
+            $('<div></div>', {
+                class: "circle",
+                style: "background:rgb("+r+","+g+","+b+")"
+                
+            }).appendTo("body");
+            setTimeout("square()", 100);
+         } 
+    //    setInterval(circle, 1000);
+    
+         function square(){
+            let r = Math.floor(Math.random()*256), 
+            g = Math.floor(Math.random()*256),
+            b = Math.floor(Math.random()*256);
+            // $(".square").clone(true).appendTo("body");
+            $("<div></div>", {
+                class: "square",
+                style: "background:rgb("+r+","+g+","+b+")"
+            }).appendTo("body");
+
+           
+            setTimeout("circle()",100);
+
+         }
+        
+       
+         
+
+    </script>
+
+    
+</body>
+</html>
